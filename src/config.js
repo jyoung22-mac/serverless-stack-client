@@ -1,4 +1,6 @@
 export default {
+    MAX_ATTACHMENT_SIZE: 5000000,
+    STRIPE_KEY: "pk_test_51HZK8aCbIp6mCV6I7NjGuiO8r4UrfHanNn8Qn3T2mvBJiQskh7hYwTSyQJ1H9TUknbLCeNCFt5A6v1WSeK0dY8m800amDzD02w",
     s3: {
       REGION: "us-east-1",
       BUCKET: "justin-young-notes-app-uploads"
