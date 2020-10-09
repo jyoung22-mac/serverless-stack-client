@@ -8,3 +8,15 @@
       max-width: 320px;
     }
   }
+  .Login form a {
+    margin-bottom: 15px;
+    display: block;
+    font-size: 14px;
+  }
+
+  .Home .lander div {
+    padding-top: 20px;
+  }
+  .Home .lander div a:first-child {
+    margin-right: 20px;
+  }

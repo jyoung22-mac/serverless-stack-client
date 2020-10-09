@@ -5,9 +5,14 @@ import LoaderButton from "../components/LoaderButton";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
+import { Link } from "react-router-dom";
 import "./Login.css";
+import FacebookButton from "../components/FacebookButton";
+
+
 
 export default function Login() {
+    
   
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
@@ -15,6 +20,10 @@ export default function Login() {
     email: "",
     password: ""
   });
+
+  const handleFbLogin = () => {
+    userHasAuthenticated(true);
+  };
 
   function validateForm() {
     return fields.email.length > 0 && fields.password.length > 0;
@@ -38,6 +47,7 @@ export default function Login() {
   return (
     <div className="Login">
       <form onSubmit={handleSubmit}>
+            {/* <FacebookButton onLogin={handleFbLogin} />  */}
         <FormGroup controlId="email" bsSize="large">
           <ControlLabel>Email</ControlLabel>
           <FormControl
@@ -55,6 +65,8 @@ export default function Login() {
             onChange={handleFieldChange}
           />
         </FormGroup>
+        <Link to="/login/reset">Forgot password?</Link>
+        
         <LoaderButton
           block
           type="submit"
